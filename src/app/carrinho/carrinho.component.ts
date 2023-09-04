@@ -29,15 +29,13 @@ export class CarrinhoComponent implements OnInit {
   }
 
   removerProdutoCarrinho(produtoId: number) {
-    this.itensCarrinho = this.itensCarrinho.filter(
-      (item) => item.id !== produtoId);
+    this.itensCarrinho = this.itensCarrinho.filter(item => item.id !== produtoId);
     this.carrinhoService.removerProdutoCarrinho(produtoId);
     this.calcularTotal();
   }
   comprar() {
     alert('Parabéns, você finalizou a sua compra! Aproveite!');
     this.carrinhoService.LimparCarrinho();
-    this.router.navigate(produtos);
-    
+    this.router.navigate(['produtos']);
   }
 }
